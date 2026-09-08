@@ -14,7 +14,8 @@ renamed as (
         paymentmethod as payment_method,
         status,
         amount as amount_in_cents,
-        created_at,
+        created as created_at,
+        _batched_at
 
     from source
 
