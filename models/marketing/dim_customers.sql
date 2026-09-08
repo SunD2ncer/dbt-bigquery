@@ -1,12 +1,12 @@
 with customers as (
 
-    select * from {{ ref('stg_jaffle_shop__customers') }}
+    select * from dbt-tutorial.jaffle_shop.customers
 
 ),
 
 orders as (
 
-    select * from {{ ref('stg_jaffle_shop__orders') }}
+    select * from dbt-tutorial.jaffle_shop.orders
 
 ),
 
