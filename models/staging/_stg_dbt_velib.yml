@@ -1,0 +1,8 @@
+models:
+  - name: stg_dbt_velib__stations
+    columns: 
+      - name: station_id
+        data_tests:
+          - unique
+          - not_null
+    
