@@ -1,5 +1,5 @@
 with source as (
-   select * from {{ ref('stg_dbt_velib__regions') }}
+   select * from {{ ref('stg_regions') }}
 ), 
 
 final as (

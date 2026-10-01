@@ -8,9 +8,9 @@ with maximum as (
         max(num_ebike_available) as estimated_ebike_capacity,
         max(num_mechanical_bikes_available) as estimated_mechanical_bike_capacity
 
-    from {{ ref('stg_dbt_velib__station_status') }} ss
+    from {{ ref('stg_station_status') }} ss
 
-    join {{ ref('inter_dbt_velib__stations') }} s
+    join {{ ref('int_stations') }} s
         on s.station_id = ss.station_id
 
     group by
@@ -48,7 +48,7 @@ station_data AS (
 
     FROM maximum_with_ratio m
 
-    JOIN {{ ref('stg_dbt_velib__station_status') }} ss
+    JOIN {{ ref('stg_station_status') }} ss
         ON m.station_id = ss.station_id
     WHERE EXTRACT(MINUTE FROM last_reported) IN (0, 30)
 ), 

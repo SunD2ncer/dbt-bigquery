@@ -6,7 +6,7 @@
 }}
 
 with source as (
-    select * from {{ ref('stg_dbt_velib__station_status') }}
+    select * from {{ ref('stg_station_status') }}
     {% if is_incremental()%}
     where extracted_at > select max(extracted_at) from {{ this }}
     {% endif%}

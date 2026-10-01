@@ -1,6 +1,6 @@
 snapshots:
   - name: station_information_snapshot
-    relation: ref('inter_dbt_velib__stations')
+    relation: ref('int_stations')
     config: 
       schema: snapshots
       unique_key: station_id

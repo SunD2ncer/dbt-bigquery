@@ -1,5 +1,5 @@
 with source as (
-    select * from {{ ref('stg_dbt_velib__stations') }}
+    select * from {{ ref('stg_stations') }}
 ), 
 
 ---- Adding Commune Codes to link to a single commune 
@@ -8,7 +8,7 @@ regions as (
     select commune_code, 
     longitude as lon, 
     latitude as lat
-    from {{ ref('stg_dbt_velib__regions') }}
+    from {{ ref('stg_regions') }}
 ),
 
 final as (
