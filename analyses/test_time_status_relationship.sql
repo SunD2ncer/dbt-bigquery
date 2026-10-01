@@ -3,7 +3,7 @@ WITH modified AS (
     SELECT
         *,
         {{ function('organize_time') }}(last_updated_at) AS interval_timestamp
-    FROM {{ ref('stg_dbt_velib__station_status') }}
+    FROM {{ ref('stg_station_status') }}
 
 )
 
