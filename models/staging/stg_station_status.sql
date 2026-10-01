@@ -1,6 +1,6 @@
 with source as (
     
-    select * from {{ source('raw', 'raw_station_status') }}
+    select * from {{ source('dbt_velib', 'raw_station_status') }}
 
 ), 
 unnested as (
