@@ -9,9 +9,10 @@ sources:
         error_after:
           count: 14
           period: day
-      loaded_at_field: extracted_at
+      loaded_at_field: extracted_at 
     tables:
       - name: raw_velib_stations
+        config:
       - name: raw_station_status
         config: 
           freshness:
@@ -21,16 +22,10 @@ sources:
             error_after:
               count: 1
               period: day
+          loaded_at_field: parse_timestamp('%Y%m%d_%H%M%S', extracted_at)
       - name: raw_historical_weather
         config: 
-          freshness:
-            warn_after:
-              count: 1
-              period: hour
-            error_after:
-              count: 1
-              period: day
-          loaded_at_field: weather_timestamp
+          freshness: null
       - name: raw_velib_regions
         config:
           freshness: null
