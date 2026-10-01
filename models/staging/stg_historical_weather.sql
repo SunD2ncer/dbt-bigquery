@@ -34,7 +34,7 @@ with weather as (
     hourly_units.wind_direction_10m AS wind_direction_10m_unit,
     hourly_units.weather_code AS weather_code_unit
 
-    FROM {{ source('historical_weather', 'raw_historical_weather') }},
+    FROM {{ source('dbt_velib', 'raw_historical_weather') }},
     UNNEST(hourly.time) AS weather_time WITH OFFSET AS i
     
 )

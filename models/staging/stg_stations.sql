@@ -1,6 +1,6 @@
 with source as (
 
-    select * from {{ source('raw', 'raw_velib_stations') }}
+    select * from {{ source('dbt-velib', 'raw_velib_stations') }}
 
 ), 
 

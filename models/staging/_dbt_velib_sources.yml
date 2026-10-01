@@ -1,0 +1,25 @@
+sources:
+  - name: dbt_velib
+    database: dbt-gcp-8abd
+    config:
+      freshness:
+        warn_after:
+          count: 7
+          period: day
+        error_after:
+          count: 14
+          period: day
+      loaded_at_field: extracted_at
+    tables:
+      - name: raw_velib_stations
+      - name: raw_station_status
+        config: 
+          freshness:
+            warn_after:
+              count: 5
+              period: minute
+            error_after:
+              count: 1
+              period: day
+      - name: raw_historical_weather
+      - name: raw_velib_regions
