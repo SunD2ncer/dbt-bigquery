@@ -1,0 +1,6 @@
+sources:
+  - name: historical_weather
+    database: dbt-gcp-8abd
+    schema: dbt_velib
+    tables:
+      - name: raw_historical_weather

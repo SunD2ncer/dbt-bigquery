@@ -1,0 +1,8 @@
+snapshots:
+  - name: station_information_snapshot
+    relation: ref('inter_dbt_velib__stations')
+    config: 
+      schema: snapshots
+      unique_key: station_id
+      strategy: timestamp
+      updated_at: extracted_at

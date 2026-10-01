@@ -40,7 +40,7 @@ final as (
     station.is_renting as is_renting,
     station.is_returning as is_returning,
     station.is_installed as is_installed,
-    station.last_reported as last_reported
+    timestamp_seconds(station.last_reported) as last_reported
 
 from unnested
 )

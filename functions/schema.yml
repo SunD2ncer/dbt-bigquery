@@ -1,0 +1,18 @@
+functions:
+  - name: organize_time
+    description: UDF that returns the start of the 30-minute interval containing a timestamp
+    arguments:
+      - name: input_timestamp
+        data_type: timestamp
+    returns:
+      data_type: timestamp
+  
+  - name: division
+    description: divides without throwing the zero exception
+    arguments:
+      - name: numerator
+        data_type: float64
+      - name: denominator
+        data_type: float64
+    returns:
+      data_type: float64
