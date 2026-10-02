@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_stations
+    description: One row per geographical vélib station
+    columns: 
+      - name: station_id
+        description: unique identifier for stations
+        data_tests:
+          - unique
+          - not_null
+      - name: extracted_at
+        description: timestamp of when the row was filled
+        data_tests:
+          - not_null
+    
+  - name: stg_station_status
+    description: Contains One row per status of given station for every 5 minutes
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: 
+              - station_id
+              - extracted_at
+    columns: 
+      - name: station_id
+        data_tests:
+          - not_null
+      - name: extracted_at
+        data_tests:
+          - not_null
+          

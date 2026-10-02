@@ -1,8 +1,0 @@
-models:
-  - name: stg_stations
-    columns: 
-      - name: station_id
-        data_tests:
-          - unique
-          - not_null
-    
